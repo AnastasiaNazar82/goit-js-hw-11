@@ -23,3 +23,118 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+body {
+  max-width: 1440px;
+  display: block;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #212121;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+input {
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #808080;
+  border: 1px solid #808080;
+}
+.input-form:hover {
+  border: 1px solid #000000;
+}
+.input-form:active {
+  border: 1px solid #4e75ff;
+}
+
+.btn-form {
+  width: 91px;
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-form:hover {
+  background: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.card {
+  border: 1px solid #808080;
+  width: 360px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.card img {
+  width: 360px;
+  object-fit: cover;
+  height: 152px;
+}
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.item-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* -------------------------loader------------------- */
+.loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #fff;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
+  }
+  33% {
+    box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
+  }
+  66% {
+    box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
+  }
+  100% {
+    box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
+  }
+}
