@@ -4,13 +4,13 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryElement } from '../main';
 
 export function renderImages(imagesArr) {
-  if (imagesArr.length == 0) {
-    galleryElement.innerHTML = '';
+  if (!imagesArr.length) {
     iziToast.error({
       message:
         'Sorry, there are no images matching your search query. Please try again!',
       position: 'topRight',
     });
+    galleryElement.innerHTML = '';
   } else {
     const imgGallery = imagesArr
       .map(

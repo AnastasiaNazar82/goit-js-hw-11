@@ -9,31 +9,32 @@ import { renderImages } from './js/render-functions';
 
 export const galleryElement = document.querySelector('.gallery');
 const form = document.querySelector('.form');
-const loader = document.querySelector('.loader');
+const loaderItem = document.querySelector('.conteiner-loader');
+const inputValue = document.querySelector('input');
 
-loader.style.display = 'none';
+loaderItem.style.display = 'none';
 
 export const showLoader = () => {
-  loader.style.display = 'flex';
+  loaderItem.style.display = 'flex';
 };
 
 const hideLoader = () => {
-  loader.style.display = 'none';
+  loaderItem.style.display = 'none';
 };
 
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  const inputValue = event.target.elements.search.value.trim();
-  if (inputValue !== '') {
-    getImg(inputValue).then(data => {
+  const searchImgs = inputValue.value.trim();
+  if (searchImgs !== '') {
+    getImg(searchImgs).then(data => {
       renderImages(data.hits);
       hideLoader();
     });
     form.reset();
   } else {
     galleryElement.innerHTML = '';
-    iziToast.show({
+    iziToast.info({
       message: 'Please complete the field!',
       position: 'topRight',
     });
