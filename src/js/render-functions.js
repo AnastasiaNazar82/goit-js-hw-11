@@ -35,8 +35,7 @@ export function renderImages(imagesArr) {
     </li>`
       )
       .join('');
-
-    galleryElement.insertAdjacentHTML('beforeend', imgGallery);
+    galleryElement.innerHTML = imgGallery;
   }
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',

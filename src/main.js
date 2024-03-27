@@ -24,9 +24,9 @@ const hideLoader = () => {
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  const lookup = event.target.elements.search.value.trim();
-  if (lookup !== '') {
-    getImg(lookup).then(data => {
+  const inputValue = event.target.elements.search.value.trim();
+  if (inputValue !== '') {
+    getImg(inputValue).then(data => {
       renderImages(data.hits);
       hideLoader();
     });

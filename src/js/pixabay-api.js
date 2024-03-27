@@ -1,10 +1,10 @@
 import { showLoader } from '../main';
 
-export function getImg() {
+export function getImg(inputValue) {
   const baseUrl = 'https://pixabay.com/api/';
   const params = new URLSearchParams({
     key: '43044638-81b288208bd41d7f3c4a2027f',
-    q: lookup,
+    q: inputValue,
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: 'true',
