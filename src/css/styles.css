@@ -143,33 +143,30 @@ img {
   justify-content: center;
 }
 
-/* .is-hidden {
-  display: none;
-} */
-
 .loader {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: block;
-  margin: 15px auto;
-  position: relative;
-  color: #fff;
   box-sizing: border-box;
-  animation: animloader 1s linear infinite alternate;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
 }
-
-@keyframes animloader {
-  0% {
-    box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
-  }
-  33% {
-    box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
-  }
-  66% {
-    box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
-  }
-  100% {
-    box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
+.loader:after,
+.loader:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  background: #ff3d00;
+  animation: spin 1s linear infinite;
+  transform-origin: 0px 100%;
+}
+.loader:before {
+  transform-origin: 0 50%;
+  background: #fff;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -39,7 +39,7 @@ form.addEventListener('submit', event => {
           position: 'topRight',
         });
       });
-    // .finally(() => hideLoader())
+    hideLoader();
   }
 
   if (searchImgs === '') {
