@@ -26,17 +26,29 @@ form.addEventListener('submit', event => {
   event.preventDefault();
 
   const searchImgs = inputValue.value.trim();
+  showLoader();
+
   if (searchImgs !== '') {
-    getImg(searchImgs).then(data => {
-      renderImages(data.hits);
-      hideLoader();
-    });
-    form.reset();
-  } else {
-    galleryElement.innerHTML = '';
-    iziToast.info({
-      message: 'Please complete the field!',
+    getImg(searchImgs)
+      .then(data => renderImages(data.hits))
+      .catch(error => {
+        console.log(error);
+        iziToast.error({
+          title: 'Error',
+          message: `❌ Sorry, there are no images matching your search query. Please, try again!`,
+          position: 'topRight',
+        });
+      });
+    // .finally(() => hideLoader())
+  }
+
+  if (searchImgs === '') {
+    iziToast.error({
+      color: 'yellow',
+      message: ` Please fill in the field for search`,
       position: 'topRight',
     });
   }
+
+  galleryElement.innerHTML = '';
 });

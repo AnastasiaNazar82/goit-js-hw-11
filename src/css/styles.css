@@ -143,6 +143,10 @@ img {
   justify-content: center;
 }
 
+/* .is-hidden {
+  display: none;
+} */
+
 .loader {
   width: 12px;
   height: 12px;

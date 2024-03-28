@@ -4,10 +4,12 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryElement } from '../main';
 
 export function renderImages(imagesArr) {
-  if (!imagesArr.length) {
+  if (imagesArr.length == 0) {
     iziToast.error({
-      message:
-        'Sorry, there are no images matching your search query. Please try again!',
+      message: `❌ Sorry, there are no images matching your search query. Please, try again!`,
+      theme: 'dark',
+      progressBarColor: '#FFFFFF',
+      color: '#EF4040',
       position: 'topRight',
     });
     galleryElement.innerHTML = '';
