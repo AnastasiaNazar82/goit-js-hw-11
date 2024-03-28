@@ -40,9 +40,8 @@ form.addEventListener('submit', event => {
         });
       });
     hideLoader();
-  }
-
-  if (searchImgs === '') {
+  } else {
+    searchImgs === '';
     iziToast.error({
       color: 'yellow',
       message: ` Please fill in the field for search`,
