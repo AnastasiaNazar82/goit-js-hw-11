@@ -11,7 +11,7 @@ export function getImg(inputValue) {
   });
 
   const url = `${baseUrl}?${params}`;
-  showLoader();
+  //   showLoader();
   return fetch(url).then(response => {
     if (!response.ok) {
       throw new Error(response.status);

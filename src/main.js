@@ -24,13 +24,17 @@ const hideLoader = () => {
 
 form.addEventListener('submit', event => {
   event.preventDefault();
+  //   galleryElement.innerHTML = '';
 
   const searchImgs = inputValue.value.trim();
   showLoader();
 
   if (searchImgs !== '') {
     getImg(searchImgs)
-      .then(data => renderImages(data.hits))
+      .then(data => {
+        renderImages(data.hits);
+        hideLoader();
+      })
       .catch(error => {
         console.log(error);
         iziToast.error({
@@ -39,15 +43,12 @@ form.addEventListener('submit', event => {
           position: 'topRight',
         });
       });
-    hideLoader();
   } else {
-    searchImgs === '';
+    inputValue.value = '';
     iziToast.error({
       color: 'yellow',
       message: ` Please fill in the field for search`,
       position: 'topRight',
     });
   }
-
-  galleryElement.innerHTML = '';
 });
